@@ -296,3 +296,83 @@ body {
     from { opacity: 0; transform: translateY(5px); } 
     to { opacity: 1; transform: translateY(0); } 
 }
+
+/* --- RESPONSIVIDADE (PARA CELULARES E TABLETS) --- */
+
+@media (max-width: 768px) {
+    /* 1. Muda o layout de Lado-a-Lado para Cima-e-Baixo */
+    .container {
+        flex-direction: column;
+    }
+
+    /* 2. Sidebar vira uma barra no topo com scroll horizontal */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding-bottom: 0;
+    }
+
+    .logo-area {
+        padding: 15px;
+    }
+
+    .menu {
+        display: flex;
+        overflow-x: auto; /* Permite arrastar os botões para o lado no celular */
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .nav-item {
+        white-space: nowrap; /* Não deixa o texto quebrar linha */
+        width: auto;
+        margin-bottom: 0;
+    }
+
+    /* 3. Ajusta o Header Laranja */
+    .brisa-header {
+        height: auto;
+        flex-direction: column;
+        padding: 15px;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .header-right {
+        justify-content: center;
+        width: 100%;
+        font-size: 12px;
+    }
+
+    /* 4. Tabela com Scroll (Essencial para não quebrar o site) */
+    .view-area {
+        padding: 15px;
+    }
+
+    .card-table {
+        overflow-x: auto; /* Permite arrastar a tabela para os lados no celular */
+    }
+
+    .brisa-table th, .brisa-table td {
+        padding: 10px;
+        font-size: 12px;
+        min-width: 120px; /* Garante que os dados não fiquem espremidos */
+    }
+
+    /* 5. Ajustes no Terminal */
+    .terminal-body {
+        height: 350px;
+        font-size: 11px;
+    }
+
+    .btn-robo-orange {
+        width: 100%; /* Botões do robô ocupam a largura toda no celular */
+        margin-bottom: 10px;
+    }
+
+    .robo-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
