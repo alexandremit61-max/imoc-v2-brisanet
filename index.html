@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMOC V2 - Brisanet</title>
+    <!-- Favicon Brisanet (Jangada) -->
+<link rel="icon" type="image/png" href="./assets/img/jangada-brisanet.png">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Fontes do Google para um visual moderno -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="logo-area">
+    <!-- logo Brisanet -->
+    <img src="assets/img/logo-animado.gif.png" alt="Brisanet" class="logo-animada">
+</div>
+            
+            <nav class="menu">
+                <button class="nav-item" onclick="showPage('dashboard')">Dashboard</button>
+                <button class="nav-item active" onclick="showPage('chamados')">Chamados</button>
+                <button class="nav-item" onclick="showPage('concluidos')">Concluídos</button>
+                <button class="nav-item" onclick="showPage('robo')">Console Robôs</button>
+                <button class="nav-item" onclick="showPage('regioes')">Regiões</button>
+            </nav>
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="content">
+            <!-- HEADER LARANJA -->
+            <header class="brisa-header">
+                <div class="header-left">
+                    <h2 id="page-title">FILA DE ATUAÇÃO - CHAMADOS</h2>
+                </div>
+                <div class="header-right">
+                    <span class="divider">|</span>
+                    <span>Operador: <strong>Alexandre</strong></span>
+                    <button class="btn-sair-top">Sair</button>
+                </div>
+            </header>
+
+            <div class="view-area">
+                
+                <!-- PÁGINA: DASHBOARD -->
+                <section id="dashboard" class="page-content">
+                    <div class="empty-state">
+                        <p>Aguardando integração de dados para o <strong>Dashboard IMOC</strong>.</p>
+                    </div>
+                </section>
+
+                <!-- PÁGINA: CHAMADOS (COLOQUEI UNS 10 ITENS DE AMOSTRA) -->
+                <section id="chamados" class="page-content active">
+                    <div class="card-table">
+                        <table class="brisa-table">
+                            <thead>
+                                <tr><th>TICKET</th><th>TÍTULO / RESUMO</th><th>CRITICIDADE</th><th>AGENDAMENTO</th><th>STATUS</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="t-id">#597457</span></td><td>Atenuação Pesqueira-100 <> Arco verde-100</td><td>MEDIUM</td><td>30/04/2026, 14:29</td><td><span class="st-red">Pendente de Agendamento</span></td></tr>
+                                <tr><td><span class="t-id">#597106</span></td><td>Atenuação Petrolândia-100 <> Paulo Afonso-200</td><td>MEDIUM</td><td>30/04/2026, 11:12</td><td><span class="st-red">Pendente de Agendamento</span></td></tr>
+                                <tr><td><span class="t-id">#596013</span></td><td>Atenuação: Garanhuns-dc-100 <> Águas Belas-dc-100</td><td>MEDIUM</td><td>30/04/2026, 10:40</td><td><span class="st-yellow">Agendado</span></td></tr>
+                                <tr><td><span class="t-id">#595390</span></td><td>Atenuação Patos-100 <> Pombal-100</td><td>MEDIUM</td><td>30/04/2026, 17:20</td><td><span class="st-yellow">Agendado</span></td></tr>
+                                <tr><td><span class="t-id">#595532</span></td><td>Atenuação Recife-300 <> Vitoria</td><td>MEDIUM</td><td>30/04/2026, 13:12</td><td><span class="st-red">Pendente de Agendamento</span></td></tr>
+                                <tr><td><span class="t-id">#594173</span></td><td>Atenuação DWDM: Afogados <> Arco Verde</td><td>MEDIUM</td><td>30/04/2026, 09:30</td><td><span class="st-red">Pendente de Agendamento</span></td></tr>
+                                <tr><td><span class="t-id">#591955</span></td><td>Atenuação Toritama-100 <> Campina Grande-100</td><td>MÉDIA</td><td>30/04/2026, 14:00</td><td><span class="st-red">Pendente de Agendamento</span></td></tr>
+                                <tr><td><span class="t-id">#592130</span></td><td>Atenuação: Barro duro-100 <> Teresina-300</td><td>MÉDIA</td><td>30/04/2026, 14:57</td><td><span class="st-red">Pendente de Agendamento</span></td></tr>
+                                <tr><td><span class="t-id">#588943</span></td><td>Atenuação DWDM: Barreiros <> Ipojuca</td><td>MÉDIA</td><td>30/04/2026, 17:54</td><td><span class="st-red">Pendente de Agendamento</span></td></tr>
+                                <tr><td><span class="t-id">#588357</span></td><td>Atenuação Sobral >> Itapajé</td><td>MÉDIA</td><td>30/04/2026, 22:42</td><td><span class="st-red">Pendente de Agendamento</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- PÁGINA: CONCLUÍDOS (COLOQUEI MAS 10 ITENS) -->
+                <section id="concluidos" class="page-content">
+                    <div class="card-table">
+                        <table class="brisa-table">
+                            <thead>
+                                <tr><th>TICKET</th><th>TRECHO</th><th>EMPRESA</th><th>STATUS</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="t-id-green">#594853</span></td><td>Recife x Cabo Santo Agostinho - ROTA DE PROTEÇÃO</td><td>GIGA +</td><td><span class="st-green">Resolvido</span></td></tr>
+                                <tr><td><span class="t-id-green">#582426</span></td><td>Apodi <> Mossoró</td><td>RNP</td><td><span class="st-green">Resolvido</span></td></tr>
+                                <tr><td><span class="t-id-green">#581109</span></td><td>Alagoinhas x Olindina</td><td>Brisanet</td><td><span class="st-green">Resolvido</span></td></tr>
+                                <tr><td><span class="t-id-green">#581173</span></td><td>Quipapa x Palmares</td><td>Veloo</td><td><span class="st-green">Resolvido</span></td></tr>
+                                <tr><td><span class="t-id-green">#580558</span></td><td>União dos Palmares x Quipapa</td><td>Brisanet</td><td><span class="st-green">Resolvido</span></td></tr>
+                                <tr><td><span class="t-id-green">#563305</span></td><td>Ipojuca <> Barreiros</td><td>GIGA +</td><td><span class="st-green">Resolvido</span></td></tr>
+                                <tr><td><span class="t-id-green">#570328</span></td><td>Arapiraca x Porto Real</td><td>Oops</td><td><span class="st-green">Resolvido</span></td></tr>
+                                <tr><td><span class="t-id-green">#575435</span></td><td>Garanhuns x Caruaru</td><td>Vivo</td><td><span class="st-green">Resolvido</span></td></tr>
+                                <tr><td><span class="t-id-green">#574206</span></td><td>Caico x Currais Novos</td><td>GIGA +</td><td><span class="st-green">Resolvido</span></td></tr>
+                                <tr><td><span class="t-id-green">#572943</span></td><td>Quipapa x Palmares</td><td>Brisanet</td><td><span class="st-green">Resolvido</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- PÁGINA: CONSOLE ROBÔ / JUNIOR VAI EDITAR DEPOIS COM DADOS REAIS -->
+                <section id="robo" class="page-content">
+                    <div class="robo-toolbar">
+                        <h4 class="toolbar-title">Central de Automação (RPA)</h4>
+                        <div class="toolbar-buttons">
+                            <button class="btn-robo-orange">Robô Saski (Ler Novos Chamados)</button>
+                            <button class="btn-robo-orange">Robô Jira (Abrir GMUDs em Lote)</button>
+                        </div>
+                    </div>
+
+                    <div class="terminal-container">
+                        <div class="terminal-header">
+                            <div class="dots"><span></span><span></span><span></span></div>
+                            <span class="terminal-title">imoc-rpa-server ~ bash</span>
+                            <span class="clean-screen">Limpar Tela</span>
+                        </div>
+                        <div class="terminal-body">
+                            <p><span class="prompt">root@imoc:~$</span> 🍪 Usando cookies existentes para vitoria.oliveira@grupobrisanet.com.br...</p>
+                            <p><span class="prompt">root@imoc:~$</span> 🌐 Acessando o portal do Jira...</p>
+                            <p><span class="prompt">root@imoc:~$</span> ✅ Sessão do Jira salva em /home/francisco.dias/Area de trabalho/Projetos...</p>
+                            <p><span class="warn">root@imoc:~$ ⚠️ Nenhuma task pendente de GMUD foi encontrada com os critérios atuais.</span></p>
+                            <p><span class="prompt">root@imoc:~$</span> ✅ Processo finalizado com sucesso!</p>
+                            <p><span class="prompt">root@imoc:~$</span> 🤖 Robô da GMUD foi dormir!</p>
+                            <p><span class="prompt">root@imoc:~$</span> 💬 Iniciando thread de comentário...</p>
+                            <p><span class="prompt">root@imoc:~$</span> 🟢 Iniciando Sincronização SASKI usando cookie: saski_auth_vitoria_oliveira...</p>
+                            <p><span class="prompt">root@imoc:~$</span> ⌛ Aguardando Saski (Modo Local Otimizado)...</p>
+                            <p><span class="prompt">root@imoc:~$</span> 📝 Localizando a caixa pelo texto visual (Bypass de Namespace)...</p>
+                            <p><span class="prompt">root@imoc:~$</span> 🖱️ Clicando no botão Comentar...</p>
+                            <p><span class="prompt">root@imoc:~$</span> ✅ Comentário enviado com sucesso no Saski!</p>
+                            <p><span class="prompt">root@imoc:~$</span> 🔴 Executando rotina de encerramento no modal do Saski...</p>
+                            <p><span class="prompt">root@imoc:~$</span> 🖱️ Disparando clique via JavaScript no botão Confirmar...</p>
+                            <p><span class="error">root@imoc:~$ ❌ Erro no modal de finalização: Locator.click: Error: strict mode violation...</span></p>
+                            <p><span class="prompt">root@imoc:~$</span> 🔵 Iniciando Sincronização no JIRA...</p>
+                            <p><span class="prompt">root@imoc:~$</span> ✅ Comentário salvo na GMUD!</p>
+                            <p><span class="prompt">root@imoc:~$</span> 🤖 Robô background finalizou com sucesso para Task #156</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PÁGINA: REGIÕES -->
+                <section id="regioes" class="page-content">
+                    <div class="empty-state">
+                        <p>Configurações de <strong>Regiões</strong> de Atuação.</p>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Link para o arquivo JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>

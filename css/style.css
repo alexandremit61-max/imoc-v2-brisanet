@@ -1,0 +1,298 @@
+:root {
+  --brisa-orange: #FF4500;
+  --brisa-orange-hover: #E63E00;
+  --dark-navy: #1e1e2d;
+  --bg-app: #f4f7f9;
+  --white: #ffffff;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Inter', 'Segoe UI', sans-serif; 
+}
+
+body {
+    background: var(--bg-app);
+}
+
+.container { 
+    display: flex; 
+    height: 100vh; 
+    overflow: hidden; 
+}
+
+/* SIDEBAR */
+.sidebar { 
+    width: 250px; 
+    background: var(--dark-navy); 
+    color: white; 
+    display: flex; 
+    flex-direction: column; 
+    z-index: 10;
+}
+
+/* Container da logo */
+.logo-area { 
+    padding: 30px 20px; 
+    text-align: center; 
+    border-bottom: 1px solid rgba(255,255,255,0.05); 
+}
+
+/* A Logo: Limpa, nítida e com animação suave */
+.logo-animada {
+    width: 150px; 
+    display: block;
+    margin: 0 auto;
+    
+    /* Removi o mix-blend e o brightness para a cor ficar viva */
+    filter: none; 
+    
+    transition: transform 0.3s ease;
+    /* Aplicando a animação de pulsar ajustada */
+    animation: pulsar 4s infinite ease-in-out; 
+}
+
+/* Efeito de aumentar levemente ao passar o mouse */
+.logo-animada:hover {
+    transform: scale(1.05);
+}
+
+/* Animação de pulsar: Agora ela cria um brilho laranjinha por TRÁS, 
+   sem clarear a frente da logo */
+@keyframes pulsar {
+    0% { 
+        filter: drop-shadow(0 0 0px transparent); 
+    }
+    50% { 
+        /* Um brilho laranja bem suave (0.4 de opacidade) que não invade a logo */
+        filter: drop-shadow(0 0 8px rgba(255, 69, 0, 0.4)); 
+    }
+    100% { 
+        filter: drop-shadow(0 0 0px transparent); 
+    }
+}
+
+.system-tag { 
+    font-size: 11px; 
+    color: #7e8299; 
+    font-weight: bold; 
+    display: block;
+}
+
+.menu { 
+    padding: 20px 10px; 
+    flex-grow: 1; 
+}
+
+.nav-item {
+  width: 100%; 
+  padding: 12px 15px; 
+  border: none; 
+  background: transparent;
+  color: #a2a5b9; 
+  text-align: left; 
+  cursor: pointer; 
+  border-radius: 6px;
+  font-size: 14px; 
+  margin-bottom: 5px; 
+  transition: 0.3s;
+}
+
+.nav-item:hover { 
+    background: rgba(255,255,255,0.05); 
+    color: white; 
+}
+
+.nav-item.active { 
+    background: var(--brisa-orange); 
+    color: white; 
+    font-weight: 600; 
+}
+
+/* HEADER (BARRA LARANJA) */
+.content { 
+    flex-grow: 1; 
+    display: flex; 
+    flex-direction: column; 
+    overflow: hidden; 
+}
+
+.brisa-header {
+  background: var(--brisa-orange); 
+  color: white; 
+  height: 60px;
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between;
+  padding: 0 30px; 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+  z-index: 5;
+}
+
+#page-title { 
+    font-size: 18px; 
+    text-transform: uppercase; 
+    font-weight: 700; 
+    letter-spacing: 0.5px;
+}
+
+.header-right { 
+    display: flex; 
+    align-items: center; 
+    font-size: 14px; 
+}
+
+.divider { 
+    margin: 0 15px; 
+    opacity: 0.5; 
+}
+
+.btn-sair-top {
+  background: white; 
+  color: var(--brisa-orange); 
+  border: none;
+  padding: 6px 15px; 
+  border-radius: 4px; 
+  margin-left: 15px;
+  font-weight: bold; 
+  cursor: pointer; 
+  transition: 0.2s;
+}
+
+.btn-sair-top:hover { 
+    background: #f0f0f0; 
+    transform: translateY(-1px); 
+}
+
+/* ÁREA DE TRABALHO */
+.view-area { 
+    padding: 30px; 
+    overflow-y: auto; 
+    flex-grow: 1; 
+}
+
+.card-table { 
+    background: white; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05); 
+    overflow: hidden; 
+}
+
+/* TABELAS */
+.brisa-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+}
+
+.brisa-table th { 
+    background: #fafafa; 
+    padding: 15px; 
+    text-align: left; 
+    color: #888; 
+    font-size: 12px; 
+    border-bottom: 1px solid #eee; 
+    text-transform: uppercase; 
+}
+
+.brisa-table td { 
+    padding: 15px; 
+    border-bottom: 1px solid #f9f9f9; 
+    font-size: 14px; 
+    color: #444;
+}
+
+.t-id { color: #007bff; font-weight: bold; }
+.t-id-green { color: #28a745; font-weight: bold; }
+
+/* BADGES DE STATUS */
+.st-red { background: #fee2e2; color: #ef4444; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; }
+.st-yellow { background: #fef3c7; color: #d97706; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; }
+.st-green { background: #dcfce7; color: #15803d; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; }
+
+/* CONSOLE ROBÔS - BOTÕES LARANJAS */
+.robo-toolbar { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 20px; 
+}
+
+.toolbar-title { color: #444; font-size: 16px; font-weight: 600; }
+.toolbar-buttons { display: flex; gap: 12px; }
+
+.btn-robo-orange {
+  background: linear-gradient(135deg, var(--brisa-orange) 0%, #FF6A33 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 69, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-robo-orange:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 69, 0, 0.4);
+  filter: brightness(1.1);
+}
+
+/* TERMINAL */
+.terminal-container { 
+    background: #0b0b14; 
+    border-radius: 10px; 
+    overflow: hidden; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4); 
+}
+
+.terminal-header { 
+    background: #1c1c2b; 
+    color: #7e8299; 
+    padding: 10px 20px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.dots span { 
+    width: 10px; 
+    height: 10px; 
+    border-radius: 50%; 
+    display: inline-block; 
+    margin-right: 5px; 
+}
+.dots span:nth-child(1) { background: #ff5f56; }
+.dots span:nth-child(2) { background: #ffbd2e; }
+.dots span:nth-child(3) { background: #27c93f; }
+
+.terminal-title { font-family: monospace; font-size: 12px; }
+.clean-screen { font-size: 11px; cursor: pointer; text-decoration: underline; }
+
+.terminal-body { 
+    padding: 25px; 
+    height: 450px; 
+    overflow-y: auto; 
+    font-family: 'Courier New', monospace; 
+    font-size: 13px; 
+    line-height: 1.6; 
+    color: #d1d1d1; 
+}
+
+.prompt { color: #27c93f; }
+.warn { color: #ffa800; font-weight: bold; }
+.error { color: #ff5555; background: rgba(255, 85, 85, 0.1); padding: 2px 5px; border-radius: 3px; }
+
+.empty-state { text-align: center; padding: 100px; color: #999; font-style: italic; }
+
+/* LOGICA DE EXIBIÇÃO */
+.page-content { display: none; }
+.page-content.active { display: block; animation: fadeIn 0.3s forwards; }
+
+@keyframes fadeIn { 
+    from { opacity: 0; transform: translateY(5px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
